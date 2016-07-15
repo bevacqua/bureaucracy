@@ -1,0 +1,21 @@
+{
+  "name": "bureaucracy",
+  "version": "1.0.3",
+  "description": "Pull files from hidden file inputs into text inputs with ease",
+  "main": "bureaucracy.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bevacqua/bureaucracy.git"
+  },
+  "author": "Nicolas Bevacqua <nicolasbevacqua@gmail.com> (https://ponyfoo.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bevacqua/bureaucracy/issues"
+  },
+  "homepage": "https://github.com/bevacqua/bureaucracy#readme",
+  "dependencies": {
+    "contra": "1.9.4",
+    "crossvent": "1.5.4",
+    "xhr": "2.2.1"
+  }
+}
