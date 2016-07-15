@@ -58,6 +58,7 @@ The submission process emits a variety of events on the `bureaucrat` object, usi
 
 Event     | Arguments            | Description
 ----------|----------------------|-----------------------------------------------------------------------------
+`started` | `rawFiles`           | A submission attempt has started for `rawFiles`
 `invalid` | `allFiles`           | Submitted files were invalid, a request won't be made
 `valid`   | `validFiles`         | At least one submitted file was valid, a request will be made
 `error`   | `err`                | An error `err` occurred during the HTTP API request

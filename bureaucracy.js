@@ -32,6 +32,7 @@ function create (options) {
   return bureaucrat;
 
   function submit (rawFiles) {
+    bureaucrat.emit('started', rawFiles);
     var allFiles = Array.prototype.slice.call(rawFiles);
     var validFiles = filter(allFiles);
     if (!validFiles) {
