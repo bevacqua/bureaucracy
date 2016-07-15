@@ -59,19 +59,14 @@ function create (options) {
     }
 
     function handleResponse (err, res, body) {
-      console.log(err);
       res.body = body = getData(body);
-      console.log(body);
       var results = body && body.results && Array.isArray(body.results) ? body.results : [];
-      console.log(results,res.statusCode,err,body instanceof Error, body);
-      if (err || res.statusCode < 200 || res.statusCode > 299 || body instanceof Error) {
-        console.log("bureaucrat.emit('error',", err);
+      var failed = err || res.statusCode < 200 || res.statusCode > 299 || body instanceof Error;
+      if (failed) {
         bureaucrat.emit('error', err);
       } else {
-        console.log("bureaucrat.emit('success',", results, body);
         bureaucrat.emit('success', results, body);
       }
-        console.log("bureaucrat.emit('ended',", err, results, body);
       bureaucrat.emit('ended', err, results, body);
     }
   }
