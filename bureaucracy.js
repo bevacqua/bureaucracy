@@ -26,6 +26,7 @@ function setup (fileinput, options) {
 
 function create (options) {
   var o = options || {};
+  o.formData = o.formData || {};
   var bureaucrat = emitter({
     submit: submit
   });
@@ -41,6 +42,9 @@ function create (options) {
     }
     bureaucrat.emit('valid', validFiles);
     var form = new FormData();
+    Object.keys(o.formData).forEach(function copyFormData(key) {
+      form.append(key, o.formData[key]);
+    });
     var req = {
       'Content-Type': 'multipart/form-data',
       headers: {
