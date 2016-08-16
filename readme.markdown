@@ -19,6 +19,7 @@ Option                 | Description
 `validate`             | Function that receives a `File` object and should indicate whether that file is valid
 `method`               | HTTP method to use when posting the files. Defaults to `PUT`
 `endpoint`             | HTTP endpoint to post the files to. Defaults to `/api/files`
+`formData`             | Object containing form parameters. Defaults to an empty object: `{}`
 
 There are "common" `validate` functions for your convenience. These can be referenced by name on the `validate` option
 
