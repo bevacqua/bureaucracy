@@ -27,6 +27,7 @@ function setup (fileinput, options) {
 function create (options) {
   var o = options || {};
   o.formData = o.formData || {};
+  o.fieldKey = o.fieldKey || 'uploads';
   var bureaucrat = emitter({
     submit: submit
   });
@@ -59,7 +60,7 @@ function create (options) {
     xhr(req, handleResponse);
 
     function appendFile (file) {
-      form.append('uploads', file, file.name);
+      form.append(o.fieldKey, file, file.name);
     }
 
     function handleResponse (err, res, body) {
