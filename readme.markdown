@@ -19,7 +19,8 @@ Option                 | Description
 `validate`             | Function that receives a `File` object and should indicate whether that file is valid
 `method`               | HTTP method to use when posting the files. Defaults to `PUT`
 `endpoint`             | HTTP endpoint to post the files to. Defaults to `/api/files`
-`formData`             | Object containing form parameters. Defaults to an empty object: `{}`
+`fieldKey`             | String setting file upload field key. Defaults to `uploads`
+`formData`             | Object containing additional form parameters. Defaults to an empty object: `{}`
 
 There are "common" `validate` functions for your convenience. These can be referenced by name on the `validate` option
 
@@ -31,7 +32,7 @@ Validator | Description
 
 The `files` parameter expects an array of `File` or a `FileList`, like the ones you can pull from `input.files`, where `input` is an input element of type `file`.
 
-The files are uploaded using an `uploads` field key. Once your API has handled the uplaoded files, a JSON response should be returned. The only requirement here is a `results` property that's an array describing the success of each file upload.
+The files are uploaded using a default `uploads` field key, but this can be customized using the `fieldKey` options parameter. Once your API has handled the uploaded files, a JSON response should be returned. The only requirement here is a `results` property that's an array describing the success of each file upload.
 
 ```json
 {
