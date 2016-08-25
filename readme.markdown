@@ -21,6 +21,7 @@ Option                 | Description
 `endpoint`             | HTTP endpoint to post the files to. Defaults to `/api/files`
 `fieldKey`             | String setting file upload field key. Defaults to `uploads`
 `formData`             | Object containing additional form parameters. Defaults to an empty object: `{}`
+`xhrOptions`           | Object containing options parameters for `xhr` call. Defaults to an empty object: `{}`
 
 There are "common" `validate` functions for your convenience. These can be referenced by name on the `validate` option
 

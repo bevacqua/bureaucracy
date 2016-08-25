@@ -27,6 +27,7 @@ function setup (fileinput, options) {
 function create (options) {
   var o = options || {};
   o.formData = o.formData || {};
+  o.xhrOptions = o.xhrOptions || {};
   o.fieldKey = o.fieldKey || 'uploads';
   var bureaucrat = emitter({
     submit: submit
@@ -55,6 +56,9 @@ function create (options) {
       url: o.endpoint || '/api/files',
       body: form
     };
+    Object.keys(o.xhrOptions).forEach(function copyXhrOptions(key) {
+      req.append(key, o.xhrOptions[key]);
+    });
 
     validFiles.forEach(appendFile);
     xhr(req, handleResponse);
