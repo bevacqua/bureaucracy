@@ -14,8 +14,8 @@
   },
   "homepage": "https://github.com/bevacqua/bureaucracy#readme",
   "dependencies": {
-    "contra": "1.9.4",
-    "crossvent": "1.5.4",
+    "contra": "^1.9.4",
+    "crossvent": "^1.5.4",
     "xhr": "2.2.1"
   }
 }
